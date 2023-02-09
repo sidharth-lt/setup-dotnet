@@ -1089,7 +1089,8 @@ function Resolve-AssetName-And-RelativePath([string] $Runtime) {
 
 function Prepare-Install-Directory {
     New-Item -ItemType Directory -Force -Path $InstallRoot | Out-Null
-
+    Write-Output($InstallRoot)
+    Write-Output("---------------------------------")
     $installDrive = $((Get-Item $InstallRoot -Force).PSDrive.Name);
     $diskInfo = $null
     try{
